@@ -39,8 +39,8 @@ func Register(c *gin.Context) {
 	c.JSON(http.StatusCreated, gin.H{"id": u.ID, "email": u.Email, "name": u.Name})
 }
 
-func Login(c *gin.Context) {
-	var in loginDTO
+func Login(c *gin.Context) { // gin context
+	var in loginDTO // variable
 	if err := c.ShouldBindJSON(&in); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
