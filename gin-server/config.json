@@ -1,0 +1,16 @@
+{
+    "server":{
+        "port":"8080"
+    },
+    "database":{
+        "host":"localhost",
+        "port":"5432",
+        "user":"postgres",
+        "password":"password",
+        "dname":"gindb",
+        "sslmode":"disable"
+    },
+    "jwt":{
+        "secret":"k0r2i1s2n4"
+    }
+}
