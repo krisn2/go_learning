@@ -52,14 +52,14 @@ func albumsHandler(w http.ResponseWriter, r *http.Request) {
 	case http.MethodPost:
 		addAlbumHandler(w, r)
 	case http.MethodGet:
-		getAllalbums(w, r)
+		getAllalbums(w)
 	default:
 		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 	}
 }
 
 // getAllalbums retrieves all albums from the database and returns them as a JSON array.
-func getAllalbums(w http.ResponseWriter, r *http.Request) {
+func getAllalbums(w http.ResponseWriter) {
 	var albs []Album
 	rows, err := db.Query("SELECT * FROM album")
 	if err != nil {
